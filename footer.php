@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md">
-                <small class="d-block text-muted"><span style="color: rgb(189, 143, 44);">Bit</span>Change © 2021 </small><BR>
+                <small class="d-block text-muted"><span style="color: rgb(189, 143, 44);">Crypto</span>Dashboard © 2021 </small><BR>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-include('header.php');
+include_once('header.php');
 ?>
 
 <!-- Dashboard Start -->
@@ -26,5 +26,5 @@ include('header.php');
 <!-- Dashboard End -->
 
 <?php
-include('footer.php')
+include_once('footer.php')
 ?>
