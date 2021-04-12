@@ -8,11 +8,11 @@ include_once('header2.php');
         <div class="col-md-3">
             <!-- Empty Column -->
         </div>
-        <!-- Sign Up Form Start -->
         <div class="col-md-6">
             <h3 class="text-white text-center">Sign Up</h3>
             <hr>
-            <form>
+            <!-- Sign Up Form Start -->
+            <form action="signup.inc.php" method="post">
                 <!-- Name -->
                 <div class="form-group">
                     <label class="col-form-label text-white" for="inputName">Name</label>
@@ -21,7 +21,8 @@ include_once('header2.php');
                 <!-- Phone -->
                 <div class="form-group text-white">
                     <label class="col-form-label" for="inputPhone">Phone</label>
-                    <input type="text" class="form-control" placeholder="(XXX) XXX-XXXX" id="inputPhone">
+                    <input type="tel" class="form-control" aria-describedby="phoneFormat" placeholder="(XXX) XXX-XXXX" id="inputPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <small id="phoneFormat" class="form-text text-muted">Format: 123-456-7890</small>
                 </div>
                 <!-- Email Address -->
                 <div class="form-group">

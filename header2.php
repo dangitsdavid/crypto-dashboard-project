@@ -56,11 +56,11 @@
                     <li class="nav-item">
                         <span class="nav-link" href="withdrawal.php">Withdraw</span>
                     </li>
-                    <!-- 
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="signup.php">Sign Up</a>
                     </li>
-                    -->
+
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">Sign In</a>
                     </li>
