@@ -2,7 +2,7 @@
 include_once('header.php');
 ?>
 
-<!-- Dashboard Start  -->
+<!-- Dashboard Start -->
 <div class="container pt-3 pb-3 mt-4">
     <div class="row">
         <div class="col-md-3">
