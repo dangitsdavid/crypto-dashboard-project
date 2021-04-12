@@ -46,15 +46,9 @@
             <div class="collapse navbar-collapse" id="navbar-drop">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <span class="nav-link" href="index.php">Sign In
+                        <span class="nav-link" href="login.php">Home
                             <span class="sr-only">(current)</span>
                         </span>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link" href="deposit.php">Deposit</span>
-                    </li>
-                    <li class="nav-item">
-                        <span class="nav-link" href="withdrawal.php">Withdraw</span>
                     </li>
 
                     <li class="nav-item">

@@ -8,8 +8,9 @@ body {
 }
 
 /**
-** Flex Wrapper
+** Flex Wrapper START
 **/
+
 @media only screen and (min-width: 1025px) {
   .main-wrapper {
     display: flex;
@@ -26,3 +27,7 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 }
+
+/**
+** Flex Wrapper END
+**/
