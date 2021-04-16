@@ -34,38 +34,35 @@
 
 <body class="bg-primary">
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="border-bottom: 1px solid; color: rgb(189, 143, 44);">
+    <div style="border-bottom: 1px solid; color: rgb(189, 143, 44);">
+        <!-- Navbar Start -->
         <div class="container">
-            <a class="navbar-brand" href="#"><span style="color: rgb(189, 143, 44);">Crypto</span>Dashboard <span class="text-muted">Project</span></a>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container">
+                    <a class="navbar-brand" href="#"><span style="color: rgb(189, 143, 44);">Crypto</span>Dashboard <span class="text-muted">Project</span></a>
 
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-drop" aria-controls="navbar-drop">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-drop" aria-controls="navbar-drop">
+                        <span class="navbar-toggler-icon"></span>
+                    </button> <br>
 
-            <div class="collapse navbar-collapse" id="navbar-drop">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="deposit.php">Deposit</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="withdrawal.php">Withdraw</a>
-                    </li>
-                    <!-- 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
-                    </li>
-                    -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Out</a>
-                    </li>
-                </ul>
-            </div>
+                    <div class="float-center text-right">
+                        <div class="collapse navbar-collapse" id="navbar-drop">
+                            <ul class="navbar-nav justify">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login.php">Sign In
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="signup.php">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
         </div>
-    </nav>
-    <!-- Navbar End -->
+        <!-- Navbar End -->
+    </div>

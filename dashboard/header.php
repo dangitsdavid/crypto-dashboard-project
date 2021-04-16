@@ -34,8 +34,8 @@
 
 <body class="bg-primary">
 
-    <!-- Navbar Start -->
     <div style="border-bottom: 1px solid; color: rgb(189, 143, 44);">
+        <!-- Navbar Start -->
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container">
@@ -45,17 +45,27 @@
                         <span class="navbar-toggler-icon"></span>
                     </button> <br>
 
-                    <div class="float-right text-right">
+                    <div class="float-center text-right">
                         <div class="collapse navbar-collapse" id="navbar-drop">
                             <ul class="navbar-nav justify">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="login.php">Sign In
+                                    <a class="nav-link" href="index.php">Home
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="signup.php">Sign Up</a>
+                                    <a class="nav-link" href="deposit.php">Deposit</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="withdrawal.php">Withdraw</a>
+                                </li>
+                                <!-- 
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">FAQ</a>
+                                    </li>
+                                    -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../includes/signout.inc.php">Sign Out</a>
                                 </li>
                             </ul>
                         </div>
@@ -64,5 +74,5 @@
                 </div>
             </nav>
         </div>
+        <!-- Navbar End -->
     </div>
-    <!-- Navbar End -->

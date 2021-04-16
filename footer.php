@@ -1,13 +1,17 @@
 <!-- Footer Start -->
-<footer class="pt-4 mt-5  bg-primary" style="border-top: 1px solid; color: rgb(189, 143, 44);">
+<div style="border-top: 1px solid; color: rgb(189, 143, 44);">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md">
-                <small class="d-block text-muted"><span style="color: rgb(189, 143, 44);">Crypto</span>Dashboard © 2021 </small><BR>
+        <footer class="pt-4 mt-3 bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <small class="d-block text-muted"><span style="color: rgb(189, 143, 44);">Crypto</span>Dashboard © 2021 | <a href="" class="text-secondary">Admin</a> </small><BR>
+                    </div>
+                </div>
             </div>
-        </div>
+        </footer>
     </div>
-</footer>
+</div>
 <!-- Footer End -->
 
 
