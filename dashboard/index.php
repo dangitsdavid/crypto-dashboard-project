@@ -12,14 +12,27 @@ include_once('header.php');
             ?>
         </div>
         <div class="col-md-9 p-4 rounded">
-            <h1 class="pb-3 text-white">Welcome to your Dashboard</h1>
+            <h1 class="pb-3 text-white">Hi, <?php echo $user_fullname; ?>!</h1>
             <hr>
             <p class="text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                The current USD price for BTC is
+                <?php $currentBTCExchangeUSD = GetBTCExchangeRate('USD'); ?>
+                <span class="text-white">
+                    $<?php echo number_format($currentBTCExchangeUSD, 2, ".", ","); ?>
+                </span>
             </p>
             <p class="text-white">
-                Lorem ipsum dolor sit amet, <span style="color: rgb(241, 189, 75);">consectetur adipiscing elit,</span> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                The current USD price for ETH is
+                <?php $currentBTCExchangeUSD = GetETHExchangeRate('USD'); ?>
+                <span class="text-white">
+                    $<?php echo number_format($currentBTCExchangeUSD, 2, ".", ","); ?>
+                </span>
             </p>
+            <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p class="text-white">
+                Lorem ipsum dolor sit amet, <span style="color: rgb(241, 189, 75);">consectetur adipiscing elit,</span> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </div>
     </div>
 </div>

@@ -2,6 +2,8 @@
 include_once('header2.php');
 ?>
 
+<script src="/apps/signups/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+
 <!-- Dashboard Start  -->
 <div class="container pt-3 pb-3 mt-4">
     <section>
@@ -42,8 +44,11 @@ include_once('header2.php');
                     <!-- Phone -->
                     <div class="form-group text-white">
                         <label class="col-form-label" for="inputPhone">Phone</label>
-                        <input type="tel" name="inputPhone" class="form-control rounded" aria-describedby="phoneFormat" placeholder="XXX-XXX-XXXX" id="inputPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-                        <small id="phoneFormat" class="form-text text-muted">Format: 123-456-7890</small>
+
+                        <input type="tel" class="form-control rounded" name="inputPhone" id="inputPhone" aria-required="1" placeholder="(___) ___-____" data-mask="(___) ___-____" autocomplete="off" aria-invalid="false" required>
+
+                        <!-- <input type="tel" name="inputPhone" class="form-control rounded" aria-describedby="phoneFormat" placeholder="XXX-XXX-XXXX" id="inputPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> -->
+                        <small id="phoneFormat" class="form-text text-muted">Format: (123) 456-7890</small>
                     </div>
                     <!-- Username -->
                     <div class="form-group">
@@ -102,6 +107,14 @@ include_once('header2.php');
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
 </script>
+
+<!-- Phone Mask JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+<script>
+    $("#inputPhone").mask("(999) 999-9999");
+</script>
+
 
 <?php
 include_once('footer.php')

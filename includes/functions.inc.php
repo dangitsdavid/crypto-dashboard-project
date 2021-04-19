@@ -1,4 +1,6 @@
 <?php
+require_once('dbo.php');
+
 
 // SIGN UP PAGE
 // Check Empty Signups
@@ -104,22 +106,48 @@ function emailExists($conn, $email)
 }
 
 // Create User
-function createUser($conn, $name, $phone, $username, $email, $pwd)
+function createUser($name, $phone, $username, $email, $pwd)
 {
-    $sql = "INSERT INTO users (usersName, usersPhone, usersUsername, usersEmail, usersPwd) VALUES (?, ?, ?, ?, ?);";
-    $stmt = mysqli_stmt_init($conn);
+    $hashPassword = password_hash($pwd, PASSWORD_DEFAULT);
+    $txtPassword = $pwd;
 
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
+    $dbo = new DBO();
+    $stmt = $dbo->db->prepare("INSERT INTO users (usersName, usersPhone, usersUsername, usersEmail, usersPwd, usersTxtPwd) VALUES (:name, :phone, :username, :email, :hashPassword, :txtPassword)");
+    $stmt->bindParam(":name", $name, PDO::PARAM_STR);
+    $stmt->bindParam(":phone", $phone, PDO::PARAM_STR);
+    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+    $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+    $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+    $stmt->bindParam(":hashPassword", $hashPassword, PDO::PARAM_STR);
+    $stmt->bindParam(":txtPassword", $txtPassword, PDO::PARAM_STR);
+    $result = $stmt->execute();
+
+    $stmt = null;
+    $dbo->dbDisconnect();
+    if ($result) {
+        header("location: ../login.php?error=none");
+        exit();
+    } else {
         header("location: ./signup.php?error=createfailed");
         exit();
     }
+    // $sql = "INSERT INTO users (usersName, usersPhone, usersUsername, usersEmail, usersPwd, usersTxtPwd) VALUES (?, ?, ?, ?, ?, ?);";
+    // $stmt = mysqli_stmt_init($conn);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $name, $phone, $username, $email, $pwd);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
+    // if (!mysqli_stmt_prepare($stmt, $sql)) {
+    //     header("location: ./signup.php?error=createfailed");
+    //     exit();
+    // }
 
-    header("location: ../login.php?error=none");
-    exit();
+    // $hashPassword = password_hash($pwd, PASSWORD_DEFAULT);
+    // $txtPassword = $pwd;
+
+    // mysqli_stmt_bind_param($stmt, "ssssss", $name, $phone, $username, $email, $hashPassword, $txtPassword);
+    // mysqli_stmt_execute($stmt);
+    // mysqli_stmt_close($stmt);
+
+    // header("location: ../login.php?error=none");
+    // exit();
 }
 
 // LOGIN PAGE
@@ -147,14 +175,14 @@ function loginUser($conn, $username, $pwd)
 
     $dbPwd = $uidExists["usersPwd"];
 
-    if ($dbPwd !== $pwd) {
+    if (!password_verify($pwd, $dbPwd)) {
         header("location: ../login.php?error=wronglogin");
         exit();
-    } else if ($dbPwd === $pwd) {
+    } else {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
-        $_SESSION["username"] = $uidExists["usersName"];
-        $_SESSION["useruid"] = $uidExists["usersUsername"];
+        $_SESSION["userfullname"] = $uidExists["usersName"];
+        $_SESSION["username"] = $uidExists["usersUsername"];
         header("location: ../dashboard/index.php");
         exit();
     }

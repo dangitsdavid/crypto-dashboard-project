@@ -1,3 +1,12 @@
+<?php
+require_once('../includes/crypto.inc.php');
+session_start();
+
+$user_id = $_SESSION["userid"];
+$user_fullname = $_SESSION["userfullname"];
+$username = $_SESSION["username"];
+
+?>
 <!doctype html>
 <html lang="en">
 
